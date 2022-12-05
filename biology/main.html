@@ -1,0 +1,335 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Biology</title> 
+  <style> 
+    *{ 
+        box-sizing: border-box; 
+    } 
+    body{ 
+        margin: 0px; 
+        width: 100%; 
+        min-width: 100px;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: top; 
+        background-image: url(background.jpg);
+        background-position: center;
+        background-size: 1000px;
+    } 
+    .hat{ 
+        width: 100%; 
+        height: 12vh; 
+        margin: 0px; 
+        background: url(hat.png); 
+        background-size: 200px;
+        border-bottom: 4px solid rgb(99, 156, 89); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    } 
+    .hat>h1{ 
+        margin: 0; 
+        color: White; 
+        font-family: 'Montserrat', sans-serif;
+        font-size: 5vmin; 
+    } 
+    .main-content{ 
+        width: 100%; 
+        height: 78vh; 
+        margin: 0; 
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center;
+        flex-wrap: nowrap;
+    } 
+    .nav{ 
+        width: 18%; 
+        height: 78vh; 
+        background-color: #ffffff; 
+        border-right: 4px solid rgb(199, 199, 199); 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: start; 
+        overflow: auto;
+    } 
+    .nav>ul{ 
+        margin: 0px; 
+        padding: 0px; 
+        list-style-type: none; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: bottom; 
+        height: 100%; 
+        width: 100%;
+    } 
+    .nav>ul>li{ 
+        transition: all; 
+        transition-duration: 1s; 
+        background-color: #f1f1f1; 
+        padding: 10px; 
+        width: 100%;
+    } 
+    .nav>ul>li>h1{ 
+        font-size: 3vmin; 
+        color: #5b8b17; 
+        font-family: 'Montserrat', sans-serif;
+    } 
+    .drop-list-1{ 
+        width: 100%; 
+        height: 0px; 
+        transition: all; 
+        transition-duration: 1s; 
+        overflow: hidden; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: start; 
+        background-color: rgb(190, 209, 173); 
+        padding: 0; 
+    } 
+    .drop-list-2{ 
+        width: 100%; 
+        height: 0px; 
+        transition: all; 
+        transition-duration: 1s; 
+        overflow: hidden; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: start; 
+        background-color: rgb(190, 209, 173);
+        padding: 0; 
+    } 
+    .drop-list-2>li{ 
+        list-style-type: none; 
+        width: 100%;
+    } 
+    .drop-list-1>li{ 
+        list-style-type: none;
+        width: 100%; 
+    } 
+    .drop-list-1>li>button>h1{ 
+        font-size: 1.5vw; 
+        color: #5b8b17; 
+        font-family: 'Montserrat', sans-serif; 
+    } 
+    .drop-list-1>li:hover{ 
+        border: none;
+        background-color: rgba(238, 255, 192, 0.2);
+    } 
+    .drop-list-1>li>button{ 
+        border: none;
+        background-color: transparent;
+    } 
+    .drop-list-2>li>button>h1{ 
+        font-size: 1.5vw; 
+        color: White; 
+        font-family: 'Montserrat', sans-serif;
+    } 
+    .nav>ul>li:nth-child(1):hover ~ .drop-list-1{ 
+        transition: all; 
+        transition-duration: 1s; 
+        height: 200px; 
+    } 
+    .drop-list-1:hover{ 
+        transition: all; 
+        transition-duration: 1s; 
+        height: 200px; 
+    } 
+    .drop-list-1:hover ~ .nav>ul>li:nth-child(1){ 
+        transition: all; 
+        transition-duration: 1s; 
+        background-color: rgb(172, 207, 141); 
+    } 
+    .nav>ul>li:nth-child(1):hover{ 
+        transition: all; 
+        transition-duration: 1s; 
+        background-color: rgb(172, 207, 141); 
+    } 
+    
+    .nav>ul>li:nth-child(3):hover ~ .drop-list-2{ 
+        transition: all; 
+        transition-duration: 1s; 
+        height: 200px; 
+    } 
+    .drop-list-2:hover{ 
+        transition: all; 
+        transition-duration: 1s; 
+        height: 200px; 
+    } 
+    .drop-list-2:hover ~ .nav>ul>li:nth-child(3){ 
+        transition: all; 
+        transition-duration: 1s; 
+        background-color: rgb(172, 207, 141); 
+    } 
+    .nav>ul>li:nth-child(3):hover{ 
+        transition: all; 
+        transition-duration: 1s; 
+        background-color: rgb(172, 207, 141); 
+    } 
+    .text-div{
+        width: 55%;
+        height: 78vh;
+    }
+    .text-div>div{
+        border: 1px solid white;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.532) 0px 20px 20px;
+        border-radius: 30px;
+        margin: 20px;
+        padding: 20px;
+        height: 90%;
+        overflow: hidden;
+    }
+    .img-div{
+        width: 300px;
+        height: 300px;
+        background: url(background.jpg);
+        border-radius: 30px;
+        margin-right: 10px;
+        float: left;
+    }
+    .plant-tittle{
+        font-size: 33px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .paragraph{
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .source{
+        font-size: 22px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a{
+        transition: all; 
+        transition-duration: 1s; 
+        color: #17418b;
+    }
+    a:hover{
+        transition: all; 
+        transition-duration: 1s; 
+        color: #5b8b17; 
+    }
+    .extra-nav{
+        width: 18%; 
+        height: 78vh; 
+        background-color: #ffffff; 
+        border-left: 4px solid rgb(199, 199, 199); 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: bottom; 
+        overflow: auto;
+    }
+    .bottom{ 
+        width: 100%; 
+        height: 10vh; 
+        margin: 0px; 
+        background: url(hat.png); 
+        background-size: 200px;
+        border-top: 4px solid rgb(99, 156, 89); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    } 
+    .bottom>h1{ 
+        font-size: 16px;
+        color: white;
+    }
+    @media screen and (max-width: 960px){
+        .img-div{
+            width: 200px;
+            height: 200px;
+            background: url(background.jpg);
+            border-radius: 30px;
+            margin-right: 10px;
+            float: left;
+        }
+        .extra-nav{
+            display: none;
+        }
+        .nav{ 
+            width: 20%; 
+        } 
+        .text-div{
+            width: 80%;
+            height: 78vh;
+        }
+        .plant-tittle{
+            font-size: 23px;
+        }
+        .paragraph{
+            font-size: 14px;
+        }
+    }
+  </style> 
+ </head> 
+ <body> 
+    <div class="hat"> 
+        <h1>Ядовитое может стать лекарственным</h1> 
+    </div> 
+    <div class="main-content"> 
+        <div class="nav"> 
+            <ul> 
+                <li><h1>Растения</h1></li> 
+                <ul class = "drop-list-1"> 
+                    <li><button onclick="changeLayer('plant-1')"><h1>Растения</h1></button></li> 
+                    <li><button onclick="changeLayer('plant-2')"><h1>Растения</h1></button></li> 
+                </ul> 
+                <li><h1>Грибы</h1></li> 
+                <ul class = "drop-list-2"> 
+                    <li><button><h1>Грибы</h1></button></li> 
+                    <li><button><h1>Грибы</h1></button></li> 
+                    <li><button><h1>Грибы</h1></button></li> 
+                </ul> 
+            </ul> 
+        </div> 
+        <div class="text-div">
+            <div id = "plant-1">
+                <div class="img-div"></div>
+                <h1 class="plant-tittle">riughruguyrgu</h1>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="source">Источник: <a href="http://htmlbook.ru/samhtml/ssylki">fdfdf</a></p>
+            </div>
+            <div id = "plant-2">
+                <div class="img-div"></div>
+                <h1 class="plant-tittle">riughruguyrgu</h1>
+                <p class="paragraph">ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore eveniet esse sequi nemo atque sed culpa, quidem accusantium facilis delectus laboriosam velit assumenda dolorum, ipsa aperiam magnam recusandae voluptas.</p>
+                <p class="source">Источник: <a href="http://htmlbook.ru/samhtml/ssylki">fdfdf</a></p>
+            </div>
+        </div>
+        <div class="extra-nav"></div>
+    </div> 
+    <div class="bottom"> 
+        <h1>@ Copyright 2022</h1> 
+    </div>
+    <script>
+        let plantsLen = 2
+
+        for (let i = 1; i <= plantsLen; i++){
+            document.getElementById("plant-" + i).style.display = "none";
+        }
+        document.getElementById(localStorage.getItem("plantIdToLoad")).style.display = "block";
+        localStorage.removeItem("plantIdToLoad")
+
+        function changeLayer(elementId){
+            for (let i = 1; i <= plantsLen; i++){
+                document.getElementById("plant-" + i).style.display = "none";
+            }
+            document.getElementById(elementId).style.display = "block";
+        }
+    </script>
+ </body> 
+</html>
+

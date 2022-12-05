@@ -1,0 +1,260 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Biology</title> 
+  <style> 
+    *{ 
+        box-sizing: border-box; 
+    } 
+    body{ 
+        margin: 0px; 
+        width: 100%; 
+        min-width: 100px;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: top; 
+        background-image: url(background.jpg);
+        background-position: center;
+        background-size: 2000px;
+    } 
+    .hat{ 
+        width: 100%; 
+        height: 12vh; 
+        margin: 0px; 
+        background: url(hat.png); 
+        background-size: 200px;
+        border-bottom: 4px solid rgb(99, 156, 89); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    } 
+    .hat>h1{ 
+        margin: 0; 
+        color: White; 
+        font-family: 'Montserrat', sans-serif;
+        font-size: 5vmin; 
+    } 
+    .main-content{ 
+        width: 60%;
+        height: 50vh; 
+        margin: 0 auto; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: nowrap;
+        background-color: rgba(255, 255, 255, 0.769);
+        border: 1px solid rgba(255, 255, 255, 0.769);
+        border-radius: 30px;
+    } 
+    .content{ 
+        width: 100%;
+        height: 78vh; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: nowrap;
+    } 
+    .bottom{ 
+        width: 100%; 
+        height: 10vh; 
+        margin: 0px; 
+        background: url(hat.png); 
+        background-size: 200px;
+        border-top: 4px solid rgb(99, 156, 89); 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    } 
+    .bottom>h1{ 
+        font-size: 16px;
+        color: white;
+    }
+    .main-tittle{
+        color:#5b8b17;
+        font-size: 25px;
+        height: 15%;
+        text-align: center;
+    }
+    .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 94%;
+        height: 100%;
+    }
+    .list>div{
+        width: 95%;
+        height: 75%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .list>div>div{
+        display: inline-block;
+        height: 32vh;
+        width: 80%;
+        overflow: auto;
+    }
+    .img-div{
+        width: 12vmin;
+        height: 12vmin;
+        margin: 10px;
+    }
+    .change-slot-button-left{
+        width: 6vmin;
+        height: 14vmin;
+        background-color: #8cda1f;
+        border: 1px solid #8cda1f;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 6vmin;
+    }
+    .change-slot-button-right{
+        width: 6vmin;
+        height: 14vmin;
+        background-color: #8cda1f;
+        border: 1px solid #8cda1f;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 6vmin;
+    }
+  </style> 
+ </head> 
+ <body> 
+    <div class="hat"> 
+        <h1>Ядовитое может стать лекарственным</h1> 
+    </div> 
+    <div class="content"> 
+        <div class="main-content"> 
+            <div id = "list-1" class = "list">
+                <h1 class = "main-tittle">Растения</h1>
+                <div>
+                    <button button onclick="minusSlot()" class = "change-slot-button-left">&lt;</button>
+                    <div>
+                        <button button onclick="loadList('plant-1')" class = "img-div" style = "background-color: red">
+
+                        </button>
+                    </div>
+                    <button button onclick="plusSlot()" class = "change-slot-button-right">&gt;</button>
+                </div>
+            </div>
+            <div id = "list-2" class = "list">
+                <h1 class = "main-tittle">Грибы</h1>
+                <div>
+                    <button button onclick="minusSlot()" class = "change-slot-button-left">&lt;</button>
+                    <div>
+                        <button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button>
+                        <button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button>
+                        <button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button>
+                        <button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button><button button onclick="loadList('plant-2')" class = "img-div" style = "background-color: green">
+
+                        </button>
+                    </div>
+                    <button button onclick="plusSlot()" class = "change-slot-button-right">&gt;</button>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <div class="bottom"> 
+        <h1>@ Copyright 2022</h1> 
+    </div>
+    <script>
+        const maxIndex = 2
+        for (let i = 2; i <= maxIndex; i++){
+            document.getElementById("list-" + i).style.display = "none";
+        }
+        let index = 1
+        /*var x = setInterval(function() {
+            for (let i = 1; i <= maxIndex; i++){
+                document.getElementById("list-" + i).style.display = "none";
+            }
+            document.getElementById("list-" + index).style.display = "block";
+            index++;
+            if (index > maxIndex){
+                index = 1;
+            }
+        }, 4000)*/
+
+        function loadList(elementId){
+            localStorage.setItem("plantIdToLoad", elementId);
+            document.location.href = 'main.html'; 
+        }
+
+        function plusSlot(){
+            index ++
+            if (index > maxIndex){
+                index = 1
+            }
+            for (let i = 1; i <= maxIndex; i++){
+                document.getElementById("list-" + i).style.display = "none";
+            }
+            document.getElementById("list-" + index).style.display = "flex";
+        }
+        function minusSlot(){
+            index --
+            if (index < 1){
+                index = maxIndex
+            }
+            for (let i = 1; i <= maxIndex; i++){
+                document.getElementById("list-" + i).style.display = "none";
+            }
+            document.getElementById("list-" + index).style.display = "flex";
+        }
+    </script>
+ </body> 
+</html>
+
